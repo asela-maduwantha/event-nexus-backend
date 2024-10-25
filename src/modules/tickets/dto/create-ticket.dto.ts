@@ -18,7 +18,11 @@ export class CreateTicketDto {
     @IsNumber()
     quantity: number;
 
+    @ApiProperty({ description: 'Available quantity of tickets available', example: 100 })
+    @IsNumber()
+    availableQuantity: number;
+
     @ApiProperty({description: 'Event ID of the event that tickets belongs'})
     @IsString()
-    eventId: MongooseSchema.Types.ObjectId;
+    event: MongooseSchema.Types.ObjectId;
 }
