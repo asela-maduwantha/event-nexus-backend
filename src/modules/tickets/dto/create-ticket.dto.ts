@@ -1,7 +1,8 @@
-// tickets/dto/create-ticket.dto.ts
 import { ApiProperty } from '@nestjs/swagger';
-import { IsEnum, IsNotEmpty, IsNumber } from 'class-validator';
+import { IsEnum, IsNotEmpty, IsNumber, IsString } from 'class-validator';
 import { TicketType } from 'src/common/enums/ticket-type.enum';
+import {Schema as MongooseSchema } from 'mongoose';
+
 
 export class CreateTicketDto {
     @ApiProperty({ description: 'Type of ticket', enum: TicketType })
@@ -16,4 +17,8 @@ export class CreateTicketDto {
     @ApiProperty({ description: 'Total quantity of tickets available', example: 100 })
     @IsNumber()
     quantity: number;
+
+    @ApiProperty({description: 'Event ID of the event that tickets belongs'})
+    @IsString()
+    eventId: MongooseSchema.Types.ObjectId;
 }

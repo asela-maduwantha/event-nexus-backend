@@ -2,7 +2,6 @@ import { IsArray, IsEnum, IsString } from 'class-validator';
 import { ApiProperty } from "@nestjs/swagger";
 import { EventCategory } from 'src/common/enums/event-category.enum';
 import {Schema as MongooseSchema } from 'mongoose';
-import { User } from 'src/modules/users/schemas/user.schema';
 export class CreateEventDto{
     @ApiProperty({description:'Name of the event.'})
     @IsString()
