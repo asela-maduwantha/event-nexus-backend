@@ -10,7 +10,7 @@ async function bootstrap() {
     .setTitle('EventNexus APIs')
     .setDescription('Development purpose only.')
     .setVersion('1.0')
-    .addTag('eveneNexus')
+    .addTag('eventNexus')
     .build();
   const documentFactory = () => SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, documentFactory);
